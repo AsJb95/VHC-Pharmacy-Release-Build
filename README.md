@@ -1,66 +1,61 @@
 # VHC Pharmacy POS
 
-Windows desktop pharmacy billing and inventory application for Varnika Health Care (VHC).
+Release-only repository for the approved Varnika Health Care (VHC) Pharmacy POS Windows builds.
 
-## Current Stable Release
+## Latest Stable Release
 
-**VHC Pharmacy POS v3.18.3**
+**VHC Pharmacy POS v3.19.0**
 
 - Platform: Windows
-- Installer: `VHC_Pharmacy_POS_Setup_3.18.3.exe`
-- SHA256: `A9E2E61707274BBF5B69647F11690B9A4912023A06B0EA048F5835E886DA4860`
+- Installer: `VHC_Pharmacy_POS_Setup_3.19.0.exe`
+- SHA256: `0924C175116CF36DF54E3FB18FE45B8B4560266D1DB2DFDAF3986B3D824903B8`
+- Installer size: 109,960,017 bytes
 
-## Highlights
+## v3.19.0 Highlights
 
-- Pharmacy billing and cart workflow
-- Cash, UPI, Card/Credit and Split Payment support
-- Payment reporting and filtering
-- Inventory and stock movement workflows
-- Warehouse ↔ Pharmacy transfer support
-- Credit settlement support
-- Reports with local-date handling and summary cards
-- Telegram bot integration and security improvements
-- Local/offline return improvements
-- Light/Dark theme support
+- No default or sticky payment mode on new bills/tabs
+- Cash Received / Change shown only for Cash, inside the payment card below Discount and above Net Total
+- Per-tab Custom Charge draft isolation
+- Inline Split Payment with Cash + UPI exact-total validation
+- Unified Bill Details across All Bills, Patient Name and Payments
+- Historical/cloud bill Return / Exchange support
+- Exact-original-batch stock restoration
+- Fail-closed handling for missing, ambiguous or unsafe historical return mappings
+- Local/offline returns preserved
+- Production cloud-return RPC migration completed with no existing-data drift
 
-## Important v3.18.3 Note
+## Download & Verify
 
-Historical/cloud bill returns remain intentionally fail-closed in v3.18.3.  
-The production-safe historical return redesign is being developed separately for v3.19.0.
+Download the approved installer from this repository's **Releases** page.
 
-## Installation
-
-1. Download `VHC_Pharmacy_POS_Setup_3.18.3.exe` from the repository Releases page.
-2. Verify the SHA256 checksum before installation.
-3. Run the installer on the approved Windows PC.
-4. Launch **VHC Pharmacy POS** and verify login, billing, reports and configured integrations.
-
-## Verify SHA256 on Windows
-
-Open PowerShell in the installer folder and run:
+On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\VHC_Pharmacy_POS_Setup_3.18.3.exe -Algorithm SHA256
+Get-FileHash .\VHC_Pharmacy_POS_Setup_3.19.0.exe -Algorithm SHA256
 ```
 
 Expected SHA256:
 
 ```text
-A9E2E61707274BBF5B69647F11690B9A4912023A06B0EA048F5835E886DA4860
+0924C175116CF36DF54E3FB18FE45B8B4560266D1DB2DFDAF3986B3D824903B8
 ```
 
-## Version Policy
+If the hash does not match exactly, do not install the file.
 
-- **v3.18.3** is the frozen stable baseline.
-- New development continues under **v3.19.0**.
-- v3.19.0 changes must not be mixed back into the v3.18.3 release.
+## Previous Stable Release
 
-## Release Documentation
+**v3.18.3**
+- Installer: `VHC_Pharmacy_POS_Setup_3.18.3.exe`
+- SHA256: `A9E2E61707274BBF5B69647F11690B9A4912023A06B0EA048F5835E886DA4860`
 
-See:
+## Documentation
+
+- `docs/RELEASE_NOTES_v3.19.0.md`
 - `docs/RELEASE_NOTES_v3.18.3.md`
 - `docs/VERIFY_DOWNLOAD.md`
 
 ## Repository Purpose
 
-This repository is intended to hold stable VHC Pharmacy POS release information and approved release assets. Development work should remain in the main development repository and only verified release artifacts should be published here.
+This repository is for approved release artifacts and release documentation only.
+
+Development source code, TEST artifacts, backups, QA profiles, superseded builds and experimental work must not be published here.
